@@ -95,3 +95,20 @@ Password
 -GPT
 -Search BAr
 -Movie Suggestions
+
+# Steps--
+
+Before creating LOgin lets setup routing
+-INstall react router dom
+-setup in body
+{-createBrowserRouter
+-RouterProvidder } -- ye dono inside body
+-app.js = me only Body component
+pehle setup nipta lete hn fir building shuru krte hain
+-log0
+-bg image
+-login form
+-signup form
+
+Validation inside form -- if my email id is correct or not, if password id corrct or not, giving error for it etc.  
+-if u have lot of big forms, always use external lib like formik library

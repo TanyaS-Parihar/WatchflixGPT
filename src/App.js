@@ -1,9 +1,12 @@
-import "./App.css";
+import "./index.css";
+import Browse from "./components/Browse";
+import Body from "./components/Body";
+import Login from "./components/Login";
 
 function App() {
   return (
-    <div className="text-3xl font-bold text-green-600">
-      <p>hello lets build</p>
+    <div>
+      <Body />
     </div>
   );
 }

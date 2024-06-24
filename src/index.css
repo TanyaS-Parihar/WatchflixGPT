@@ -1,1 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+.form {
+  position: absolute;
+  width: 15.5rem;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.919);
+  border-radius: 2px;
+  top: 15vw;
+  left: 38vw;
+}
