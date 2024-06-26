@@ -105,10 +105,27 @@ Before creating LOgin lets setup routing
 -RouterProvidder } -- ye dono inside body
 -app.js = me only Body component
 pehle setup nipta lete hn fir building shuru krte hain
--log0
--bg image
--login form
--signup form
+1-log0
+2-bg image
+3-Routing of app
+4-login form
+5-signup form
 
-Validation inside form -- if my email id is correct or not, if password id corrct or not, giving error for it etc.  
+-6 Form validation & useRef
+7-firebase setup
+//{ Set-ExecutionPolicy RemoteSigned -Scope Process}
+8 -authentication(letss sign up our first user
+)
+[Eading documentation is a superpower of developer]
+Validation inside form -- if my email id is correct or not, if password id corrct or not, giving error for it etc.
+we will use -
+
+# UseRef hook
+
+lets you reference a value that isnt needed
+
 -if u have lot of big forms, always use external lib like formik library
+
+8-ddeploying our app to production (using firebase)
+
+9- redux install and given to our system
