@@ -1,11 +1,11 @@
 import { useState, useRef } from "react";
-import Header from "./Header";
+import HeaderIn from "./HeaderIn";
 import { checkValidData } from "../utils/validate";
 import SecretButton from "./SecretButton";
 import { auth } from "../utils/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from "react-router";
+import { MOVIE_IMGS } from "../utils/constants";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -18,7 +18,7 @@ const Login = () => {
   const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
-  const navigate = useNavigate(null);
+
   const handleButtonClick = () => {
     //first Validate the form data
     //for that we'll make validate .js in utils
@@ -49,53 +49,43 @@ const Login = () => {
       )
         .then((userCredential) => {
           // Signed in
-          console.log("i m wooho", userCredential);
           const user = userCredential.user;
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
           setErrorMessage(errorCode + "-" + errorMessage);
-          navigate("/browse");
         });
     } else {
+      let emailValue = email.current.value || "userr@user.com";
+      let passwordValue = password.current.value || "Abcd#12345";
       //sign in logic
-      signInWithEmailAndPassword(
-        auth,
-        email.current.value,
-        password.current.value
-      )
+      signInWithEmailAndPassword(auth, emailValue, passwordValue)
         .then((userCredential) => {
           // Signed in
-          const user = userCredential.user;
+          const user = userCredential?.user;
 
-          navigate("/browse");
           // ...
         })
         .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
+          const errorCode = error?.code;
+          const errorMessage = error?.message;
           setErrorMessage(errorCode + "-" + errorMessage);
-          navigate("/browse");
         });
     }
   };
 
   return (
     <div>
-      <Header />
+      <HeaderIn />
       <SecretButton />
       <div className="w-50 h-30">
-        <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/a56dc29b-a0ec-4f6f-85fb-50df0680f80f/2f8ae902-8efe-49bb-9a91-51b6fcc8bf46/IN-en-20240617-popsignuptwoweeks-perspective_alpha_website_medium.jpg"
-          alt="shows-img"
-        />
+        <img src={MOVIE_IMGS} alt="shows-img" />
         <form onSubmit={(e) => e.preventDefault()} className=" form">
           <h1 className="font-bold text-white ml-2 my-3">
             {isSignInForm ? "Sign In" : "Sign Up"}
           </h1>
-          <div>
+          <div className="form-input">
             {!isSignInForm && (
               <input
                 ref={name}
@@ -122,7 +112,7 @@ const Login = () => {
           <button
             //this will prevent it from submitting right away
             onClick={handleButtonClick}
-            className="p-2 m-2  w-[12.5rem] rounded-sm text-white font-bold bg-gradient-to-l bg-red-800 "
+            className="secondary-btn p-2 m-2  w-[12.5rem] rounded-sm text-white font-bold bg-gradient-to-l bg-red-800 "
           >
             {isSignInForm ? "Sign In" : "Sign Up"}
           </button>

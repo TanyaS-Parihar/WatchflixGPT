@@ -1,25 +1,17 @@
 import HeaderIn from "./HeaderIn";
-// import { useNavigate } from "react-router";
-// import { auth } from "../utils/firebase";
-// import { signOut } from "firebase/auth";
+import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
+import MainContainer from "./MainContainer";
+import SecondaryContainer from "./SecondaryContainer";
 
 const Browse = () => {
-  // const navigate = useNavigate();
-
-  // const handleSignOut = () => {
-  //   // signOut(auth)
-  //   //   .then(() => {
-  //   // Sign-out successful.
-  //   // .catch((error) => {
-  //   //   // An error happened.
-  //   //   console.log();
-  //   // });
-  // };
+  //fetch api hook
+  useNowPlayingMovies();
 
   return (
     <div className="flex justify-between">
       <HeaderIn />
-      Browse.. browse
+      <MainContainer />
+      <SecondaryContainer />
     </div>
   );
 };
