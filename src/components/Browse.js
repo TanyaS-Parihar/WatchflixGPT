@@ -1,17 +1,20 @@
 import HeaderIn from "./HeaderIn";
 import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
 import MainContainer from "./MainContainer";
-import SecondaryContainer from "./SecondaryContainer";
 
+import SecondContainer from "./SecondContainer";
+import usePopularMovies from "../hooks/usePopularMovies";
 const Browse = () => {
   //fetch api hook
   useNowPlayingMovies();
-
+  usePopularMovies();
   return (
-    <div className="flex justify-between">
+    <div className="-mt-3 bg-gray-700 ">
       <HeaderIn />
-      <MainContainer />
-      <SecondaryContainer />
+      <div>
+        <MainContainer />
+        <SecondContainer />
+      </div>
     </div>
   );
 };
