@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 import VideoBackground from "./VideoBackground";
 import VideoTitle from "./VideoTitle";
-import SecondaryContainer from "./SecondaryContainer";
 
 const MainContainer = () => {
   //data??
@@ -12,7 +11,7 @@ const MainContainer = () => {
   //but we only need one movie out of it
   if (!movies) return;
 
-  const mainMovie = movies[0];
+  const mainMovie = movies[7];
   console.log(mainMovie);
   const { original_title, overview, id } = mainMovie;
   return (

@@ -13,11 +13,15 @@ import { LOGO, LOGO2, USER_AVATAR } from "../utils/constants";
 import { Cloudinary } from "@cloudinary/url-gen";
 import { AdvancedImage } from "@cloudinary/react";
 import { fill } from "@cloudinary/url-gen/actions/resize";
+import { toggleGPTSearchView } from "../utils/GPTSlice";
+import language from "../utils/languageConstants";
+import { changeLanguage } from "../utils/configSlice";
 const HeaderIn = () => {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
-
+  const user = useSelector((store) => store.user);
+  const showGPTSearch = useSelector((store) => store.GPT.showGPTSearch);
   const cld = new Cloudinary({
     cloud: {
       cloudName: "dyvkxkecp",
@@ -48,8 +52,15 @@ const HeaderIn = () => {
     });
   }, []); //<--useeffect and inside Api is for getting information and keeping an eye on sign out  everything. Isse profile me pic aur name ko use kr paynge
 
-  const user = useSelector((store) => store.user);
-
+  const handleGPTSearchClick = () => {
+    //toggle
+    //age true toh showing and agr false toh not showing
+    dispatch(toggleGPTSearchView());
+  };
+  const handleLanguageChange = (e) => {
+    dispatch(changeLanguage(e.target.value));
+    //value hamne isiliye di thi taki ham padh le
+  };
   return (
     <div>
       <div className="flex justify-between">
@@ -60,6 +71,20 @@ const HeaderIn = () => {
 
         {user !== null && (
           <div className=" absolute top-4 right-[40px] z-[99] px-1 py-1 mt-2 flex gap-2">
+            {showGPTSearch && (
+              <select onChange={handleLanguageChange}>
+                <option value="en">English</option>
+                <option value="hindi">Hindi</option>
+                <option value="spanish">Spanish</option>
+                <option value="chinese">Chinese</option>
+              </select>
+            )}
+            <button
+              onClick={handleGPTSearchClick}
+              className=" bg-purple-800 p-2 rounded-md  text-white z-10"
+            >
+              {showGPTSearch ? "Go back" : " GPT Search"}
+            </button>
             <button
               className=" bg-red-800 p-2 rounded-md  text-white z-10"
               onClick={() => {

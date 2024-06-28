@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 
-import { addUpcomingMovies } from "../utils/moviesSlice";
+import { addPopularShows } from "../utils/moviesSlice";
 import { useDispatch } from "react-redux";
-const useUpcomingMovies = () => {
+const usePopularShows = () => {
   const dispatch = useDispatch();
-  const getUpcomingMovies = async () => {
+  const getPopularShows = async () => {
     const data = await fetch(
       "https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1",
       {
@@ -17,12 +17,12 @@ const useUpcomingMovies = () => {
       }
     );
     const json = await data.json();
-    console.log("upcoming", json.results);
-    dispatch(addUpcomingMovies(json.results));
+    console.log("PopularShows", json.results);
+    dispatch(addPopularShows(json.results));
   };
   useEffect(() => {
-    getUpcomingMovies();
+    getPopularShows();
   }, []);
 };
 
-export default useUpcomingMovies;
+export default usePopularShows;
