@@ -86,8 +86,6 @@ const GPTSearchBar = () => {
   return (
     <div className="w-screen h-screen  bg-gradient-to-b from-purple-950 bg-gradient-to-r from-black bg-gradient-to-bl from-purple-950">
       <img className="opacity-15" src={MOVIE_IMGS} alt="shows-img" />
-      {/* <h1>WELCOME TO WATCHFLIX-GPT</h1>
-      <h2>i am your Assistant</h2> */}
 
       <form
         onSubmit={(e) => {

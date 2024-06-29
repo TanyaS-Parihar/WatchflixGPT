@@ -23,11 +23,6 @@ export const CARD_IMG_URL = "https://image.tmdb.org/t/p/w500";
 export const POPULAR_API =
   "https://api.themoviedb.org/3/tv/popular?language=en-US&page=1";
 
-// export const OPEN_AI_KEY =
-//   "sk-proj-J1oM3WYcyvL0Bp1k9zbXT3BlbkFJ0xDbN8ZROkC2bMCy0Vae";
-
-// const GEMINI_API_KEY = "AIzaSyA1UkMbD_YBGrB9G818YwLaTzaJStERmD4";
-
 // --LOADING --- GIF ----
 // import { Cloudinary } from "@cloudinary/url-gen";
 // import { AdvancedImage } from "@cloudinary/react";
