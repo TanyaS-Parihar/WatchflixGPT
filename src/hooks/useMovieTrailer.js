@@ -7,6 +7,7 @@ const useMovieTrailer = ({ movieId }) => {
   //VERY IMPORTTANT -YE UPAR moviId KO CURLY BRACES KE ANDAR LIKHNA MAT BHULNA!!
   const dispatch = useDispatch();
   const fetchUrl = "https://api.themoviedb.org/3/movie/" + movieId + "/videos?";
+
   const getMovieVideo = async () => {
     const data = await fetch(fetchUrl, {
       method: "GET",

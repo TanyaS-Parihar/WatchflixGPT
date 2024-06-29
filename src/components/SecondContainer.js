@@ -10,14 +10,15 @@ const SecondContainer = () => {
     movies && (
       <div className="bg-gray-800 text-gray-50">
         <div className="mt-72 relative top-10 z-10  ">
-          <MovieList title={"Now Playing"} movies={movies.nowPlayingMovies} />
-          <MovieList title={"Popular"} movies={movies.addPopularMovies} />
+          <MovieList title={"Now Playing"} movies={movies?.nowPlayingMovies} />
+          <MovieList title={"Top-Rated"} movies={movies?.addTopRatedMovies} />
+          <MovieList title={"Popular"} movies={movies?.addPopularMovies} />
 
-          <MovieList title={"Upcoming"} movies={movies.addUpcomingMovies} />
-          <MovieList title={"Trending"} movies={movies.nowPlayingMovies} />
+          <MovieList title={"Upcoming"} movies={movies?.addUpcomingMovies} />
+
           <MovieList
             title={"Recommmended For You"}
-            movies={movies.nowPlayingMovies}
+            movies={movies?.nowPlayingMovies}
           />
         </div>
       </div>

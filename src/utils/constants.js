@@ -22,3 +22,26 @@ export const CARD_IMG_URL = "https://image.tmdb.org/t/p/w500";
 
 export const POPULAR_API =
   "https://api.themoviedb.org/3/tv/popular?language=en-US&page=1";
+
+export const OPEN_AI_KEY =
+  "sk-proj-J1oM3WYcyvL0Bp1k9zbXT3BlbkFJ0xDbN8ZROkC2bMCy0Vae";
+
+//
+
+// --LOADING --- GIF ----
+// import { Cloudinary } from "@cloudinary/url-gen";
+// import { AdvancedImage } from "@cloudinary/react";
+// import { fill } from "@cloudinary/url-gen/actions/resize";
+
+// const cld = new Cloudinary({
+//   cloud: {
+//     cloudName: "dyvkxkecp",
+//   },
+// });
+// const myImage = cld.image("docs/modelss");
+// myImage.resize(fill().height(60));
+
+// <div className="absolute z-[10] left-24 py-3 pt-6 h-8  ">
+//   <AdvancedImage cldImg={myImage} />
+// </div>;
+//--LOADING --- GIF ----

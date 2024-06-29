@@ -5,10 +5,10 @@ const MovieList = (props) => {
   if (movies === null) return;
 
   return (
-    <div className="overflow-x-scroll no-scrollbar">
+    <div>
       <div className=" mx-4 mt-3 font-bold text-[20px] ">
         {title}
-        <div className="flex ">
+        <div className="flex overflow-x-scroll no-scrollbar">
           {movies?.map((movie) => {
             return <MovieCard key={movie.id} posterPath={movie.poster_path} />;
           })}

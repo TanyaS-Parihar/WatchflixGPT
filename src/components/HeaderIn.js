@@ -16,6 +16,7 @@ import { fill } from "@cloudinary/url-gen/actions/resize";
 import { toggleGPTSearchView } from "../utils/GPTSlice";
 import language from "../utils/languageConstants";
 import { changeLanguage } from "../utils/configSlice";
+
 const HeaderIn = () => {
   const navigate = useNavigate();
 
@@ -64,7 +65,7 @@ const HeaderIn = () => {
   return (
     <div>
       <div className="flex justify-between">
-        <div className="absolute z-[10] -left-5 py-3 pt-6  bg-gradient-to-b w-screen from-black ">
+        <div className="absolute z-[10] -left-5 py-3 pt-6  bg-gradient-to-b  w-screen from-black  ">
           <AdvancedImage cldImg={myImage} />
         </div>
         {/* <img className="w-[200px] " src={LOGO} alt="logo" /> */}
