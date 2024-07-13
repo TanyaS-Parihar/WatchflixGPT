@@ -18,7 +18,7 @@ const GPTSearchBar = () => {
   //movie search in tmdb
 
   const handleGPTSearchClick = () => {
-    console.log(GPTsearchText.current.value);
+    // console.log(GPTsearchText.current.value);
     //now call api call using this input value
     const GPTquery =
       "Act as a Movie Recommendation Sytem and suggest some movies for the query :" +
@@ -31,7 +31,7 @@ const GPTSearchBar = () => {
       const result = await model.generateContent(prompt);
       const response = await result.response;
       const text = response.text();
-      console.log(text);
+      // console.log(text);
       const GPTmovies = text?.split(",");
       // console.log(GPTmovies);
       //will return an array of movie
@@ -59,7 +59,7 @@ const GPTSearchBar = () => {
       //will return 5 promises
       //to access
       const tmdbResults = await Promise.all(promiseArray);
-      console.log(tmdbResults);
+      // console.log(tmdbResults);
 
       dispatch(
         addGPTMoviesResult({ movieName: GPTmovies, movieResults: tmdbResults })

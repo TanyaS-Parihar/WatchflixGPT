@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import HeaderIn from "./HeaderIn";
 import { checkValidData } from "../utils/validate";
-import SecretButton from "./SecretButton";
+// import SecretButton from "./SecretButton";
 import { auth } from "../utils/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -57,7 +57,7 @@ const Login = () => {
           setErrorMessage(errorCode + "-" + errorMessage);
         });
     } else {
-      let emailValue = email.current.value || "userr@user.com";
+      let emailValue = email.current.value;
       let passwordValue = password.current.value || "Abcd#12345";
       //sign in logic
       signInWithEmailAndPassword(auth, emailValue, passwordValue)
@@ -75,10 +75,25 @@ const Login = () => {
     }
   };
 
+  const handleSecretButton = () => {
+    signInWithEmailAndPassword(auth, "user11@user.com", "Abcd#12345")
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential?.user;
+
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error?.code;
+        const errorMessage = error?.message;
+        setErrorMessage(errorCode + "-" + errorMessage);
+      });
+  };
+
   return (
     <div>
       <HeaderIn />
-      <SecretButton />
+      {/* <SecretButton /> */}
       <div className="w-50 h-30">
         <img src={MOVIE_IMGS} alt="shows-img" />
         <form onSubmit={(e) => e.preventDefault()} className=" form">
@@ -112,19 +127,27 @@ const Login = () => {
           <button
             //this will prevent it from submitting right away
             onClick={handleButtonClick}
-            className="secondary-btn p-2 m-2  w-[12.5rem] rounded-sm text-white font-bold bg-gradient-to-l bg-red-800 "
+            className=" secondary-btn p-2 m-2  w-[12.5rem] rounded-sm text-white font-bold bg-gradient-to-l bg-red-800 "
           >
             {isSignInForm ? "Sign In" : "Sign Up"}
           </button>
           <p
             onClick={toggleSignInForm}
-            className="text-white text-xs m-3 cursor-pointer"
+            className="text-white text-xs m-3 cursor-pointer underline"
           >
             {isSignInForm
               ? "Are you new to Watchflix? Sign Up Now"
               : " Already a User? Sign In "}
           </p>
         </form>
+        <div>
+          <button
+            className=" primary-btn absolute z-10 top-10 right-7 p-2 m-2  w-[12.5rem] rounded-sm text-white font-bold bg-gradient-to-l bg-red-800 "
+            onClick={handleSecretButton}
+          >
+            Shahi Darwaza
+          </button>
+        </div>
       </div>
     </div>
   );

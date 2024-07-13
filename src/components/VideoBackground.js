@@ -6,7 +6,7 @@ const VideoBackground = (movieId) => {
   console.log("movieId", movieId);
 
   const trailerVideo = useSelector((store) => store?.movies.addTrailerVideo);
-  console.log("selector", trailerVideo);
+
   //it will fetch the video api,call it using useeffect,and dispatch the json.result to trailer and ddispatch trailer to redux store
   useMovieTrailer(movieId);
 

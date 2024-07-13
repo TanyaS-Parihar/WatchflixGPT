@@ -9,7 +9,7 @@ const GPTSuggestions = () => {
   if (!movieResults) return null;
 
   return (
-    <div className="flex justify-center relative top-[-18rem] ">
+    <div className="flex justify-center relative top-[-15rem] ">
       <div className="font-bold py-5 w-[86%] bg-white bg-opacity-99 text-2xl text-red-950 mt-2">
         {movieName?.map((mname, index) => (
           <>

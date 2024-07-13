@@ -10,7 +10,7 @@ import GPTSearch from "./GPTSearch";
 
 const Browse = () => {
   const showGPTSearch = useSelector((store) => store.GPT.showGPTSearch);
-  console.log("showGPTSearch", showGPTSearch);
+  // console.log("showGPTSearch", showGPTSearch);
   //the above value will be true or false
   //fetch api hook
   useNowPlayingMovies();

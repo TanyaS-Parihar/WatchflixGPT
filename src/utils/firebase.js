@@ -24,3 +24,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth();
+
+// import { createClient } from "pexels";
+
+// export const client = createClient(
+//   "N8h8A6K2EapRtI87iPs4WNLnSKnz6QEKUwrXucqJMPW1p9ce3o3P4In8"
+// );
