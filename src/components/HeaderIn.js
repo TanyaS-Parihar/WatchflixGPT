@@ -65,7 +65,7 @@ const HeaderIn = () => {
   return (
     <div>
       <div className="flex justify-between">
-        <div className="absolute z-[10] -left-5 py-3 pt-6  bg-gradient-to-b  w-screen from-black  ">
+        <div className="absolute z-[10] left-1 py-3 pt-6  bg-gradient-to-b  w-screen from-black  ">
           <AdvancedImage cldImg={myImage} />
         </div>
         {/* <img className="w-[200px] " src={LOGO} alt="logo" /> */}
