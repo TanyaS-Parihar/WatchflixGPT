@@ -141,12 +141,26 @@ const Login = () => {
           </p>
         </form>
         <div>
+          <p className=" absolute w-1/5 top-36 right-8 text-white text-sm font-bold bg-black bg-opacity-75 ">
+            {" "}
+            Special Entrance ONLY for Recruiters!
+          </p>
           <button
             className=" primary-btn absolute z-10 top-10 right-7 p-2 m-2  w-[12.5rem] rounded-sm text-white font-bold bg-gradient-to-l bg-red-800 "
             onClick={handleSecretButton}
           >
             Shahi Darwaza
           </button>
+          <div>
+            <img
+              src="https://www.freeiconspng.com/uploads/white-curved-arrow-transparent-11.png"
+              className=" z-10 w-20 absolute right-56 top-10 rotate-45"
+            />
+            <p className=" absolute w-1/5 top-48 right-8 text-white text-sm  bg-black bg-opacity-75">
+              Are you a recruiter? Avoid the sign up process and enter the site
+              directly with this special Shahi Darwaza curated only for you.
+            </p>
+          </div>
         </div>
       </div>
     </div>
